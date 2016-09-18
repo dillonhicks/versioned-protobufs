@@ -1,0 +1,20 @@
+{
+
+    "project_name": "protato",
+    "project_url": "http://github.com/dillonhicks/protato",
+    "version": "0.0.1",
+    "major_version": "v0",
+
+    "repo_name": "protato",
+    "repo_url": "git@github.com:/dillonhicks/protato",
+
+    "author_name": "Dillon Hicks",
+    "author_email": "dillon@localhost",
+    "license": "Apache 2",
+
+    "resource_name": "Protato",
+
+    "project_namespace": "protato",
+    "model_namespace": "protato.v0"
+
+}

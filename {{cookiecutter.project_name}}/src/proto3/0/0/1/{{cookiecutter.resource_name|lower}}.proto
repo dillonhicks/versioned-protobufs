@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package {{cookiecutter.model_namespace}};
+
+import "google/api/annotations.proto";
+
+option py_generic_services = true;
+
+
+//
+// API Interface Messages
+//
+message {{cookiecutter.resource_name}} {
+
+}
+
+//
+// Request/Response Messages
+//
+message Describe{{cookiecutter.resource_name}}Request {}
+message Describe{{cookiecutter.resource_name}}Response {
+        {{cookiecutter.resource_name}} {{cookiecutter.resource_name|lower}} = 1;
+}
+
+message List{{cookiecutter.resource_name}}Request {}
+message List{{cookiecutter.resource_name}}Response {
+        repeated {{cookiecutter.resource_name}} {{cookiecutter.resource_name|lower}} = 1;
+}
+
+message Create{{cookiecutter.resource_name}}Request {}
+message Create{{cookiecutter.resource_name}}Response {}
+
+message Modify{{cookiecutter.resource_name}}Request {}
+message Modify{{cookiecutter.resource_name}}Response {}
+
+message Delete{{cookiecutter.resource_name}}Request {}
+message Delete{{cookiecutter.resource_name}}Response {}
+
+
+//
+// Service Definition
+//
+service {{cookiecutter.resource_name}}Service{
+
+        rpc Describe{{cookiecutter.resource_name}}(Describe{{cookiecutter.resource_name}}Request) returns (Describe{{cookiecutter.resource_name}}Response) {
+                option (google.api.http) = {
+                        post: "{{cookiecutter.major_version}}/{{cookiecutter.resource_name|lower}}/describe"
+                        body: "*"
+                };
+
+        }
+
+        rpc List{{cookiecutter.resource_name}}(List{{cookiecutter.resource_name}}Request) returns (List{{cookiecutter.resource_name}}Response) {
+                option (google.api.http) = {
+                        post: "{{cookiecutter.major_version}}/{{cookiecutter.resource_name|lower}}/list"
+                        body: "*"
+                };
+
+        }
+
+        rpc Create{{cookiecutter.resource_name}}(Create{{cookiecutter.resource_name}}Request) returns (Create{{cookiecutter.resource_name}}Response) {
+                option (google.api.http) = {
+                        post: "{{cookiecutter.major_version}}/{{cookiecutter.resource_name|lower}}/create"
+                        body: "*"
+                };
+
+        }
+
+        rpc Modify{{cookiecutter.resource_name}}(Modify{{cookiecutter.resource_name}}Request) returns (Modify{{cookiecutter.resource_name}}Response) {
+                option (google.api.http) = {
+                        post: "{{cookiecutter.major_version}}/{{cookiecutter.resource_name|lower}}/modify"
+                        body: "*"
+                };
+
+        }
+
+        rpc Delete{{cookiecutter.resource_name}}(Delete{{cookiecutter.resource_name}}Request) returns (Delete{{cookiecutter.resource_name}}Response) {
+                option (google.api.http) = {
+                        post: "{{cookiecutter.major_version}}/{{cookiecutter.resource_name|lower}}/delete"
+                        body: "*"
+                };
+
+        }
+
+}
